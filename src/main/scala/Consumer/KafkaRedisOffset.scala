@@ -18,7 +18,7 @@ import org.apache.spark.streaming.{Seconds, StreamingContext}
 object KafkaRedisOffset {
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf().setAppName("offset").setMaster("local[2]")
-      // 设置没秒钟每个分区拉取kafka的速率
+      // 设置没秒钟每个分区拉取kafka的速率  ： 记录条数
       .set("spark.streaming.kafka.maxRatePerPartition","100")
       // 设置序列化机制
       .set("spark.serlizer","org.apache.spark.serializer.KryoSerializer")
@@ -26,9 +26,9 @@ object KafkaRedisOffset {
     // 配置参数
     // 配置基本参数
     // 组名
-    val groupId = "zk002"
+    val groupId = "group01"
     // topic
-    val topic = "hz1803b"
+    val topic = "hd22pro"
     // 指定Kafka的broker地址（SparkStreaming程序消费过程中，需要和Kafka的分区对应）
     val brokerList = "192.168.189.233:9092"
     // 编写Kafka的配置参数

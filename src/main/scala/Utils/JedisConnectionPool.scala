@@ -17,7 +17,7 @@ object JedisConnectionPool {
   //最大空闲连接
   conf.setMaxIdle(10)
   //设置连接池属性分别有： 配置  主机名   端口号  连接超时时间    Redis密码
-  val pool = new JedisPool(conf,"127.0.0.1",6379,10000)
+  val pool = new JedisPool(conf,"192.168.189.233",6379,10000)
   //连接池
   def getConnection():Jedis ={
     pool.getResource
