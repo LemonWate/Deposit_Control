@@ -1,6 +1,7 @@
 package Utils
 
 import java.text.SimpleDateFormat
+import java.util.Date
 
 /**
   * Author HanDong
@@ -10,13 +11,12 @@ import java.text.SimpleDateFormat
   * Description 
   **/
 object timeUtils {
-  def diffTime(start:String,end:String):Double={
-    val format = new SimpleDateFormat("yyyyMMddHHmmssSSS")
-    val startT: Double = format.parse(start.substring(0,17)).getTime
-    val endT: Double = format.parse(end.substring(0,17)).getTime
+  def formatTime(time:String):String={
+    val fmat = new SimpleDateFormat("yyyy-MM-dd")
+    val startT: Date = fmat.parse(time)
+    val str: String = fmat.format(startT)
+    println(str)
+    str
 
-    (endT - startT)/6000
   }
-
-
 }
