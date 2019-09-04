@@ -10,8 +10,6 @@ import org.apache.spark.streaming.kafka010.{ConsumerStrategies, HasOffsetRanges,
 /**
   * Author HanDong
   *
-  * Date 2019/8/22
-  *
   * Description
   **/
 

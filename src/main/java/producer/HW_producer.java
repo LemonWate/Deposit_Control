@@ -33,13 +33,13 @@ public class HW_producer {
             BufferedReader bf = new BufferedReader(
                     new FileReader(
                             new File(
-                                    "D:/Desktop/JsonTest.json")));// 路径
+                                    "D:/Desktop/order.log")));// 路径
             String line = null;
             while((line=bf.readLine())!=null){
                 Thread.sleep(1000);
                 producer.send(
                         new ProducerRecord<String, String>(
-                                "JsonData", line)); //kafka的topic
+                                "Test_A", line)); //kafka的topic
             }
             bf.close();
             producer.close();
